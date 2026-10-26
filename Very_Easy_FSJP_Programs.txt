@@ -1,0 +1,198 @@
+==================================================
+README.txt
+==================================================
+VERY EASY FSJP PRACTICAL PROGRAMS
+Java: Q1-Q7. HTML/CSS/JavaScript: Q8-Q10 and Q12.
+Create each Java file as a separate class in Eclipse. If a class is named Demo, save it as Demo.java.
+Open HTML files in a browser. Q8 includes index.html and style.css in the same folder.
+JSP (Q11) and Servlet (Q13) are not included because they need a web project/server setup.
+
+
+==================================================
+01_ArithmeticOperations.java
+==================================================
+class Demo {
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        System.out.println("Add = " + (a + b));
+        System.out.println("Sub = " + (a - b));
+        System.out.println("Mul = " + (a * b));
+        System.out.println("Div = " + (a / b));
+    }
+}
+
+
+==================================================
+02_CarClass.java
+==================================================
+class Car {
+    String name = "BMW";
+    void display() { System.out.println(name); }
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.display();
+    }
+}
+
+
+==================================================
+03_ConstructorOverloading.java
+==================================================
+class Demo {
+    Demo() { System.out.println("Default"); }
+    Demo(int a) { System.out.println(a); }
+    public static void main(String[] args) {
+        Demo d1 = new Demo();
+        Demo d2 = new Demo(10);
+    }
+}
+
+
+==================================================
+04_MethodOverloading.java
+==================================================
+class Demo {
+    void add(int a, int b) { System.out.println(a + b); }
+    void add(int a, int b, int c) { System.out.println(a + b + c); }
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.add(10, 20);
+        d.add(10, 20, 30);
+    }
+}
+
+
+==================================================
+05_SingleInheritance.java
+==================================================
+class Animal {
+    void eat() { System.out.println("Eating"); }
+}
+class Dog extends Animal {
+    void bark() { System.out.println("Barking"); }
+}
+class Demo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
+
+
+==================================================
+06_MultilevelInheritance.java
+==================================================
+class A {
+    void showA() { System.out.println("Class A"); }
+}
+class B extends A {
+    void showB() { System.out.println("Class B"); }
+}
+class C extends B {
+    void showC() { System.out.println("Class C"); }
+}
+class Demo {
+    public static void main(String[] args) {
+        C obj = new C();
+        obj.showA();
+        obj.showB();
+        obj.showC();
+    }
+}
+
+
+==================================================
+07_ExceptionHandling.java
+==================================================
+class Demo {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;
+        } catch (Exception e) {
+            System.out.println("Error occurred");
+        }
+    }
+}
+
+
+==================================================
+08_TypesOfCSS/index.html
+==================================================
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types of CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>h2 { color: blue; }</style>
+</head>
+<body>
+    <h1 style="color: red;">Inline CSS</h1>
+    <h2>Internal CSS</h2>
+    <p>External CSS</p>
+</body>
+</html>
+
+
+==================================================
+08_TypesOfCSS/style.css
+==================================================
+p {
+    color: green;
+    font-size: 18px;
+}
+
+
+==================================================
+09_StaticWebpage/index.html
+==================================================
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>My Webpage</h1>
+    <p>Welcome to my website.</p>
+    <h2>My Subjects</h2>
+    <ul><li>Java</li><li>HTML</li><li>CSS</li></ul>
+</body>
+</html>
+
+
+==================================================
+10_EmailValidation/index.html
+==================================================
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Email Validation</h2>
+    <input type="text" id="email" placeholder="Enter email">
+    <button onclick="checkEmail()">Check</button>
+    <p id="result"></p>
+    <script>
+        function checkEmail() {
+            var email = document.getElementById("email").value;
+            if (email.includes("@") && email.includes(".")) {
+                document.getElementById("result").innerHTML = "Valid Email";
+            } else {
+                document.getElementById("result").innerHTML = "Invalid Email";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+==================================================
+12_DOM_BackgroundColor/index.html
+==================================================
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Change Background Color</h2>
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+        function changeColor() {
+            document.body.style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>
